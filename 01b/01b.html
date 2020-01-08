@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lab 01b</title>
+		<link rel="stylesheet" type="text/css" href="01b.css">
+		<style>
+			body{
+				background-color: #eee;
+			}
+			h1{
+				color: #00f;
+			}
+		</style>
+	</head>
+	<body>
+		<header></header>
+		<main>
+			<h1>Class 1 Lab</h1>
+			<p style="color: #111;">What is your name?</p>
+			<p style="color: #444;">Which CodeFellows class are you in?</p>
+			<p style="color: #777;">What is your instructor's name?</p>
+			<p style="color: #aaa">How would you describe your experience so far?</p>
+			<p style="color: #ddd;">Why are the questions fading away?</p>
+			<script>
+				var name = prompt('What is your name?');
+				console.log('user input name as ' + name);
+
+				var classname = prompt('Which CodeFellows class are you in?');
+				console.log('user is taking the ' + classname + ' course');
+
+				var instructor = prompt("What is your instructor's name?");
+				console.log('user is being taught by the amazing ' + instructor);
+
+				var experience = prompt('How would you describe your experience so far?');
+				console.log('user said their experience has been ' + experience);
+
+				alert('You can thank ' + instructor + ' for making your experience in ' + classname + ' so ' + experience + ', ' + name);
+			</script>
+		</main>
+		<footer></footer>
+	</body>
+</html>
