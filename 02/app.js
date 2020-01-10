@@ -21,16 +21,16 @@ while(i < strQ.length) {
 }
 
 var numA = 24;
-
-var g = 0;
+var g = 1;
 var maxG = 4;
 
-input = Number(prompt('How old is Brody?' + ' You have ' + (maxG - g) + ' guesses left.'));
+input = Number(prompt('How old is Brody? You have ' + (maxG) + ' guesses left.'));
 if(input === numA) {
   correct++;
   g++;
   alert('Correct! It took you ' + g + ' guesses.');
 } else {
+  g++;
   while(input !== numA) {
     while(g < maxG) {
       if(input === numA) {
@@ -55,15 +55,16 @@ if(input === numA) {
 
 var movieA = ['mon oncle', 'metropolis', '2001: a space odyssey', 'the empire strikes back', 'mulholland dr.', 'the thing', 'the sevent seal', 'flash gordon', 'true stories', 'good time'];
 
-g = 0;
+g = 1;
 maxG = 6;
 
-input = prompt('What is one of Brody\'s 10 favorite movies?').toLowerCase();
+input = prompt('What is one of Brody\'s 10 favorite movies? You have ' + (maxG) + 'guesses.').toLowerCase();
 if(movieA.includes(input) === true) {
   correct++;
   g++;
   alert('Correct! It took you ' + g + ' guesses.');
 } else {
+  g++;
   while(movieA.includes(input) === false) {
     while(g < maxG) {
       if(movieA.includes(input) === true) {
