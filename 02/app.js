@@ -11,7 +11,7 @@ var g = 0;
 var q = 0;
 
 function askYesNo(questionNo) {
-  while(i < strQ.length) {
+  while (i < strQ.length) {
     input = prompt(strQ[i]);
     if (input.toLowerCase() === strA[i]) {
       alert('Correct!');
@@ -29,15 +29,15 @@ function askNumber(maxG) {
   input = Number(prompt('How old is Brody?' + ' You have ' + (maxG - g) + ' guesses left.'));
   g++;
   while(g < maxG) {
-    if(input === numA) {
+    if (input === numA) {
       correct++;
       alert('Correct! It took you ' + g + ' guesses.');
       break;
     } else {
-      if(input < numA) {
+      if (input < numA) {
         input = Number(prompt('Answer too low, try again. You have ' + (maxG - g) + ' guesses left.'));
         g++
-      } else if(input > numA) {
+      } else if (input > numA) {
         input = Number(prompt('Answer too high, try again. You have ' + (maxG - g) + ' guesses left.'));
         g++;
       } else {
@@ -52,11 +52,10 @@ function askNumber(maxG) {
 function askMulti(maxG){
   var movieA = ['mon oncle', 'metropolis', '2001: a space odyssey', 'the empire strikes back', 'mulholland dr.', 'the thing', 'the sevent seal', 'flash gordon', 'true stories', 'good time'];
   g = 0;
-  maxG = 6;
   input = prompt('What is one of Brody\'s 10 favorite movies?').toLowerCase();
   g++;
-  while(g < maxG) {
-    if(movieA.includes(input) === true) {
+  while (g < maxG) {
+    if (movieA.includes(input) === true) {
       correct++;
       alert('Correct! It took you ' + g + ' guesses.');
       break;
@@ -80,4 +79,4 @@ for (i = 0; i < 1; i++) {
   askMulti(6);
 }
 
-alert('You scored ' + correct + '/'+q+' on the BrodyQuiz.');
+alert('You scored ' + correct + '/' + q + ' on the BrodyQuiz.');
