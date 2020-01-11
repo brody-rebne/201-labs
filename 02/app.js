@@ -9,7 +9,7 @@ var correct = 0;
 var g = 0;
 var q = 0;
 
-alert('Hi, ' + username + ', are you ready to take the BrodyQuiz?');
+alert('Hi ' + username + ', are you ready to take the BrodyQuiz?');
 
 function askYesNo() {
   while (i < strQ.length) {
