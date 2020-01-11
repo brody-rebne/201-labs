@@ -29,12 +29,12 @@ function askNumber(maxG) {
   var numA = 24;
   input = Number(prompt('How old is Brody?' + ' You have ' + (maxG - g) + ' guesses left.'));
   g++;
-  while(g < maxG) {
+  while(g <= maxG) {
     if (input === numA) {
       correct++;
       alert('Correct! It took you ' + g + ' guesses.');
       break;
-    } else if (input < numA && input !== null) {
+    } else if (input < numA && input !== '') {
       input = Number(prompt('Answer too low, try again. You have ' + (maxG - g) + ' guesses left.'));
       g++;
     } else if (input > numA) {
@@ -62,7 +62,7 @@ function askMulti(maxG){
   g = 0;
   input = prompt('What is one of Brody\'s 10 favorite movies?').toLowerCase();
   g++;
-  while (g < maxG) {
+  while (g <= maxG) {
     if (moviesA.includes(input) === true) {
       correct++;
       alert('Correct! It took you ' + g + ' guesses.');
@@ -72,7 +72,7 @@ function askMulti(maxG){
       g++;
     }
   }
-  if (g === maxG) {
+  if (moviesA.includes(input) === false) {
     alert('Out of guesses! Correct answers could have been ' + moviesList + '.');
   }
   q++;
@@ -91,7 +91,7 @@ for (i = 0; i < 1; i++) {
 }
 
 if (correct > (q / 2)) {
-  alert('Good job, ' + name + ', you scored ' + correct + '/' + q + ' on the BrodyQuiz.');
+  alert('Good job, ' + username + ', you scored ' + correct + '/' + q + ' on the BrodyQuiz.');
 } else {
-  alert('Too bad, ' + name + ', you only scored ' + correct + '/' + q + ' on the BrodyQuiz.');
+  alert('Too bad, ' + username + ', you only scored ' + correct + '/' + q + ' on the BrodyQuiz.');
 }

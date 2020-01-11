@@ -120,7 +120,6 @@ typings/
 .serverless
 
 ### VisualStudioCode ###
-02/.vscode/
 .vscode/
 .vscode/*
 !.vscode/settings.json
