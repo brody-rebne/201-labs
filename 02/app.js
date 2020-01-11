@@ -29,7 +29,7 @@ function askNumber(maxG) {
   var numA = 24;
   input = Number(prompt('How old is Brody?' + ' You have ' + (maxG - g) + ' guesses left.'));
   g++;
-  while(g <= maxG) {
+  while(g < maxG) {
     if (input === numA) {
       correct++;
       alert('Correct! It took you ' + g + ' guesses.');
@@ -58,11 +58,11 @@ function askMulti(maxG){
   for (var i = 0; i < (arrayLength - 1); i++) {
     moviesList += moviesA[i].toUpperCase() + ', ';
   }
-  moviesList += 'or ' + moviesA[arrayLength - 1].toUpperCase();
   g = 0;
-  input = prompt('What is one of Brody\'s 10 favorite movies?').toLowerCase();
+  moviesList += 'or ' + moviesA[arrayLength - 1].toUpperCase();
+  input = prompt('What is one of Brody\'s 10 favorite movies? You have ' + (maxG - g) + ' guesses left.').toLowerCase();
   g++;
-  while (g <= maxG) {
+  while (g < maxG) {
     if (moviesA.includes(input) === true) {
       correct++;
       alert('Correct! It took you ' + g + ' guesses.');
@@ -79,7 +79,7 @@ function askMulti(maxG){
 }
 
 for (i = 0; i < strQ.length; i++) {
-  askYesNo(i);
+  askYesNo();
 }
 
 for (i = 0; i < 1; i++) {
