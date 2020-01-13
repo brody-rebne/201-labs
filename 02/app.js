@@ -1,6 +1,6 @@
 'use strict';
 
-var username = prompt('Welcome! What is your name?');
+var username = prompt('Welcome, what is your name?');
 var strQ = ['Is Brody over 25 years old?', 'Did Brody previously work as a developer?', 'Was Brody born in Washington?', 'Did Brody attend a CODE 102 course?', 'Is Brody enjoying CODE 201 so far?'];
 var strA = ['no', 'no', 'yes', 'yes', 'yes'];
 var input = '';
@@ -9,7 +9,11 @@ var correct = 0;
 var g = 0;
 var q = 0;
 
-alert('Hi ' + username + ', are you ready to take the BrodyQuiz?');
+if (username !== '') {
+  alert('Hi ' + username + ', are you ready to take the BrodyQuiz?');
+} else {
+  alert('Are you ready to take the BrodyQuiz?');
+}
 
 function askYesNo() {
   while (i < strQ.length) {
@@ -31,8 +35,6 @@ function askNumber(maxG) {
   g++;
   while(g < maxG) {
     if (input === numA) {
-      correct++;
-      alert('Correct! It took you ' + g + ' guesses.');
       break;
     } else if (input < numA && input !== '') {
       input = Number(prompt('Answer too low, try again. You have ' + (maxG - g) + ' guesses left.'));
@@ -45,7 +47,10 @@ function askNumber(maxG) {
       g++;
     }
   }
-  if (input !== numA) {
+  if (input === numA) {
+    correct++;
+    alert('Correct! It took you ' + g + ' guesses');
+  } else {
     alert('Out of guesses! The correct answer was ' + numA + '.');
   }
   q++;
@@ -60,19 +65,21 @@ function askMulti(maxG){
   }
   g = 0;
   moviesList += 'or ' + moviesA[arrayLength - 1].toUpperCase();
-  input = prompt('What is one of Brody\'s 10 favorite movies? You have ' + (maxG - g) + ' guesses left.').toLowerCase();
+  input = prompt('What is one of Brody\'s 10 favorite movies? You have ' + (maxG - g) + ' guesses left.');
+  input = input.toLowerCase();
   g++;
   while (g < maxG) {
     if (moviesA.includes(input) === true) {
-      correct++;
-      alert('Correct! It took you ' + g + ' guesses.');
       break;
     } else {
       input = prompt('Incorrect, try again. You have ' + (maxG - g) + ' guesses left.');
       g++;
     }
   }
-  if (moviesA.includes(input) === false) {
+  if (moviesA.includes(input) === true) {
+    correct++;
+    alert('Correct! It took you ' + g + ' guesses.');
+  } else {
     alert('Out of guesses! Correct answers could have been ' + moviesList + '.');
   }
   q++;
